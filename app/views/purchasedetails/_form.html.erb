@@ -1,0 +1,32 @@
+<%= form_with(model: purchasedetail, local: true) do |form| %>
+  <% if purchasedetail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(purchasedetail.errors.count, "error") %> prohibited this purchasedetail from being saved:</h2>
+
+      <ul>
+      <% purchasedetail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :purchase_id %>
+    <%= form.number_field :purchase_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.number_field :product_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :saleprice %>
+    <%= form.text_field :saleprice %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

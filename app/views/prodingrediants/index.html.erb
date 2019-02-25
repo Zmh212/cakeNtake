@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Prodingrediants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Productname</th>
+      <th>Categoryname</th>
+      <th>Quantity</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prodingrediants.each do |prodingrediant| %>
+      <tr>
+        <td><%= prodingrediant.productname %></td>
+        <td><%= prodingrediant.categoryname %></td>
+        <td><%= prodingrediant.quantity %></td>
+        <td><%= prodingrediant.notes %></td>
+        <td><%= link_to 'Show', prodingrediant %></td>
+        <td><%= link_to 'Edit', edit_prodingrediant_path(prodingrediant) %></td>
+        <td><%= link_to 'Destroy', prodingrediant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prodingrediant', new_prodingrediant_path %>

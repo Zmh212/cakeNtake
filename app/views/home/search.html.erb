@@ -1,0 +1,46 @@
+<h1>Search</h1>
+
+
+<%= form_tag :action => 'search' do %>
+<p>What product are you looking for?:
+<%= text_field_tag 'searchinput', @searchinput %> </p>
+<%= submit_tag 'Search'%>
+<% end %> 
+<% if @results != 0 %>
+
+    <% if @searchresults.length > 0 %>
+<hr>
+<p>Here are the results based on your search:</p>
+
+<table> <tr>
+    
+        <th>Product Name</th>
+        <th>Product Image</th>
+        <th>Product Price </th>
+        </tr>
+    
+
+<% @searchresults.each do |p| %>
+    <tr>
+        <td> <%= link_to p.productimage, size:"100x100"</td>
+        <td> <%= image_tag p.productimage, size:"100x100",</td>
+        <td> <%= p.saleprice,"</td>
+    
+    
+    
+    </tr>
+    <p> <%= p.productname %> </p>
+    <% end %>
+<% end %> 
+
+        <p> Your search did not yield any results</p>
+
+<% end %>
+
+
+ 
+
+
+
+
+ 

@@ -1,0 +1,32 @@
+<table bgcolor='pink'> <tr>
+    <td width='10%' align='left'>
+        <%= link_to (image_tag 'logo.png', size: "70x70"),
+    home_index_path%></td>
+    <td width='60%' align='center'><h1>CakeNTake</h1></td>
+    <td width='20%' align='center'>SEARCH CONTROL</td>
+    <td width='20%' align='center'>LOGIN CONTROL</td></tr></table>
+    
+
+    <%= form_tag :action => 'search' do %>
+
+        Search: <%= text_field_tag 'searchinput', @searchinput %> </p>
+
+<% end %> 
+
+<ul>
+    <li><%= link_to "Home", home_index_path %> </li>
+    <li><%= link_to "Contact Us", home_contact_path %> </li>
+    <li><%= link_to "About", home_about_path %> </li>
+    <li><%= link_to "Customer", customers_path %> </li>
+    <li><%= link_to "Product", products_path %> </li>
+    <li><%= link_to "Category", categories_path %> </li>
+    <li><%= link_to "Reorder", reorders_path %> </li>
+    <li><%= link_to "Purchase", purchases_path %> </li>
+    <li><%= link_to "Employee", employees_path %> </li>
+    <li><%= link_to "Purchase Details", purchasedetails_path %> </li>
+    <li><%= link_to "Product Ingrediant", prodingrediants_path %> </li>
+    <li><%= link_to "Review", reviews_path %> </li>
+    
+    
+    
+</ul>
